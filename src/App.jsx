@@ -16,7 +16,7 @@ import ScrollToTop from './Components/ScrollToTop';
 
 const App = () => {
   return (
-    <Router basename="/finace-website">
+    <Router basename="/">
       <ScrollToTop />
       <Routes>
         <Route

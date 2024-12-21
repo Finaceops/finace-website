@@ -46,4 +46,4 @@ Ensure you have the following installed on your machine:
 This will start the Vite development server. You can now open your browser and go to http://localhost:5173/ to see the app in action.
 
 ---
-Developed by [Rahul Deka](https://rahul-deka.is-a.dev/).# finace-website
+Developed by [Rahul Deka](https://rahul-deka.is-a.dev/).

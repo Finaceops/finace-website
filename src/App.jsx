@@ -17,7 +17,7 @@ import DemoPage from './Components/DemoPage/DemoPage';
 
 const App = () => {
   return (
-    <Router basename="/">
+    <HashRouter basename="/">
       <ScrollToTop />
       <Routes>
         <Route
@@ -56,7 +56,7 @@ const App = () => {
         <Route path="/faq" element={<FAQ />} />
         <Route path="/contact-us" element={<DemoPage />} />
       </Routes>
-    </Router>
+    </HashRouter>
   );
 };
 

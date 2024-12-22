@@ -42,7 +42,7 @@ const UsefulLinks = () => {
         if (requestDemoSection) {
             requestDemoSection.scrollIntoView({ behavior: 'smooth' });
         } else {
-            navigate('/contact-us');
+            navigate('/#contact-us');
             setTimeout(() => {
                 const requestDemoSection = document.getElementById('page8');
                 if (requestDemoSection) {

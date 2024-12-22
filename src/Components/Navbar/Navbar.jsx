@@ -35,7 +35,7 @@ const Navbar = () => {
   };
 
   const scrollToRequestDemo = () => {
-    if (window.location.pathname !== '/') {
+    if (window.location.pathname !== '/' && window.location.pathname !== '/request-demo') {
       navigate('/');
       setTimeout(() => {
         scrollToSection('page8');

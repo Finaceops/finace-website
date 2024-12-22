@@ -35,8 +35,8 @@ const Navbar = () => {
   };
 
   const scrollToRequestDemo = () => {
-    if (window.location.pathname !== '/' && window.location.pathname !== '/request-demo') {
-      navigate('/');
+    if (window.location.pathname !== '/' && window.location.pathname !== '/contact-us') {
+      navigate('/contact-us');
       setTimeout(() => {
         scrollToSection('page8');
       }, 500);

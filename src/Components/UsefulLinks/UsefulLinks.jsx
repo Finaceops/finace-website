@@ -42,7 +42,7 @@ const UsefulLinks = () => {
         if (requestDemoSection) {
             requestDemoSection.scrollIntoView({ behavior: 'smooth' });
         } else {
-            navigate('/');
+            navigate('/contact-us');
             setTimeout(() => {
                 const requestDemoSection = document.getElementById('page8');
                 if (requestDemoSection) {
@@ -110,11 +110,6 @@ const UsefulLinks = () => {
                             <li>
                                 <a className="list-item" aria-label="Go to Privacy Policy">
                                     <Link to="/privacy-policy" aria-label="Navigate to Privacy Policy page">Privacy Policy</Link>
-                                </a>
-                            </li>
-                            <li>
-                                <a className="list-item" aria-label="Go to Privacy Policy">
-                                    <Link to="/request-demo" aria-label="Navigate to Request Demo page">Request Demo</Link>
                                 </a>
                             </li>
                         </ul>

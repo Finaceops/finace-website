@@ -1,0 +1,21 @@
+.header-space {
+    height: 0vh;
+}
+
+@media (max-width: 1024px) {
+    .header-space {
+        height: 3vh;
+    }
+}
+
+@media (max-width: 767px) {
+    .header-space {
+        height: 3vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-space {
+        height: 5vh;
+    }
+}

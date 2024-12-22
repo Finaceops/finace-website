@@ -13,6 +13,7 @@ import UsefulLinks from './Components/UsefulLinks/UsefulLinks';
 import PrivacyPolicy from './Components/PrivacyPolicy/PrivacyPolicy';
 import FAQ from './Components/FAQ/FAQ';
 import ScrollToTop from './Components/ScrollToTop';
+import DemoPage from './Components/DemoPage/DemoPage';
 
 const App = () => {
   return (
@@ -53,6 +54,7 @@ const App = () => {
         />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path="/request-demo" element={<DemoPage />} />
       </Routes>
     </Router>
   );

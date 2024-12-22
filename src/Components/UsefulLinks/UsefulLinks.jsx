@@ -112,6 +112,11 @@ const UsefulLinks = () => {
                                     <Link to="/privacy-policy" aria-label="Navigate to Privacy Policy page">Privacy Policy</Link>
                                 </a>
                             </li>
+                            <li>
+                                <a className="list-item" aria-label="Go to Privacy Policy">
+                                    <Link to="/request-demo" aria-label="Navigate to Request Demo page">Request Demo</Link>
+                                </a>
+                            </li>
                         </ul>
                     </nav>
                 </div>

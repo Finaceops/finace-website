@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Navbar.scss';
 
 const Navbar = () => {
   const [isNavActive, setIsNavActive] = useState(false);
-  const navigate = useNavigate();
 
   const toggleNavbar = () => {
     setIsNavActive(!isNavActive);
@@ -24,8 +23,8 @@ const Navbar = () => {
   };
 
   const scrollToGetStarted = () => {
-    if (window.location.pathname !== '/') {
-      navigate('/');
+    if (window.location.hash !== '#/') {
+      window.location.hash = '#/';
       setTimeout(() => {
         scrollToSection('page2');
       }, 500);
@@ -35,8 +34,8 @@ const Navbar = () => {
   };
 
   const scrollToRequestDemo = () => {
-    if (window.location.pathname !== '/' && window.location.pathname !== '/contact-us') {
-      navigate('/contact-us');
+    if (window.location.hash !== '#/contact-us' && window.location.hash !== '#/') {
+      window.location.hash = '#/contact-us';
       setTimeout(() => {
         scrollToSection('page8');
       }, 500);
@@ -46,8 +45,8 @@ const Navbar = () => {
   };
 
   const scrollToAboutUs = () => {
-    if (window.location.pathname !== '/') {
-      navigate('/');
+    if (window.location.hash !== '#/') {
+      window.location.hash = '#/';
       setTimeout(() => {
         scrollToSection('page9-about');
       }, 500);
@@ -58,7 +57,7 @@ const Navbar = () => {
 
   return (
     <header className="header">
-      <a href="/" className="logo" aria-label="Navigate to home">
+      <a href="#/" className="logo" aria-label="Navigate to home">
         <img src="/Logo.png" alt="Finace logo" />
       </a>
 
@@ -73,7 +72,7 @@ const Navbar = () => {
       </a>
 
       <nav className={`navbar ${isNavActive ? 'active' : ''}`}>
-        <a href="/" aria-label="Navigate to home page">Home</a>
+        <a href="#/" aria-label="Navigate to home page">Home</a>
         <a onClick={scrollToGetStarted} aria-label="Learn more about services offered by Finace">Services</a>
         <Link to="/faq" aria-label="Navigate to Frequently Asked Questions page">FAQs</Link>
         <a onClick={scrollToAboutUs} aria-label="Learn more about Finace">About Us</a>

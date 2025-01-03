@@ -1,5 +1,6 @@
-import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { initializeAnalytics, logPageView } from "./utils/analytics";
 import './app.css';
 import Navbar from './Components/Navbar/Navbar';
 import Hero from './Components/Hero/Hero';
@@ -15,10 +16,25 @@ import FAQ from './Components/FAQ/FAQ';
 import ScrollToTop from './Components/ScrollToTop';
 import DemoPage from './Components/DemoPage/DemoPage';
 
+const PageTracker = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    logPageView(location.pathname);
+  }, [location]);
+
+  return null;
+};
+
 const App = () => {
+  useEffect(() => {
+    initializeAnalytics();
+  }, []);
+
   return (
     <Router basename="/">
       <ScrollToTop />
+      <PageTracker />
       <Routes>
         <Route
           path="/"

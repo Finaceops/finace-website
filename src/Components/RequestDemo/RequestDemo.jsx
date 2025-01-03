@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
+import ReactGA from "react-ga4";
 import './RequestDemo.scss';
 
 const Page8 = () => {
-  // HubSpot form
   useEffect(() => {
     if (!document.querySelector('script[src="https://js.hsforms.net/forms/embed/v2.js"]')) {
       const script = document.createElement("script");
@@ -16,6 +16,13 @@ const Page8 = () => {
             portalId: "24408272",
             formId: "84ba8311-7202-49ba-94be-dbb30cf465c1",
             target: "#hubspot-form-container",
+            onFormSubmit: () => {
+              ReactGA.event({
+                category: "Demo Request",
+                action: "Form Submitted",
+                label: "Request a Demo Form",
+              });
+            },
           });
         }
       };
@@ -31,6 +38,13 @@ const Page8 = () => {
         portalId: "24408272",
         formId: "84ba8311-7202-49ba-94be-dbb30cf465c1",
         target: "#hubspot-form-container",
+        onFormSubmit: () => {
+          ReactGA.event({
+            category: "Demo Request",
+            action: "Form Submitted",
+            label: "Request a Demo Form",
+          });
+        },
       });
     }
   }, []);

@@ -3,50 +3,30 @@ import { Link, useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'lord-icon-element';
 import './UsefulLinks.scss';
+import ReactGA from 'react-ga4';
 
 const UsefulLinks = () => {
     const navigate = useNavigate();
 
-    const scrollToHome = () => {
-        const requestDemoSection = document.getElementById('page1');
-        if (requestDemoSection) {
-            requestDemoSection.scrollIntoView({ behavior: 'smooth' });
-        } else {
-            navigate('/');
-            setTimeout(() => {
-                const requestDemoSection = document.getElementById('page1');
-                if (requestDemoSection) {
-                    requestDemoSection.scrollIntoView({ behavior: 'smooth' });
-                }
-            }, 500);
-        }
-    }
-
-    const scrollToServices = () => {
-        const requestDemoSection = document.getElementById('page2');
-        if (requestDemoSection) {
-            requestDemoSection.scrollIntoView({ behavior: 'smooth' });
-        } else {
-            navigate('/');
-            setTimeout(() => {
-                const requestDemoSection = document.getElementById('page2');
-                if (requestDemoSection) {
-                    requestDemoSection.scrollIntoView({ behavior: 'smooth' });
-                }
-            }, 500);
-        }
+    const trackEvent = (category, action, label) => {
+        ReactGA.event({
+            category,
+            action,
+            label,
+        });
     };
 
-    const scrollToContactUs = () => {
-        const requestDemoSection = document.getElementById('page8');
-        if (requestDemoSection) {
-            requestDemoSection.scrollIntoView({ behavior: 'smooth' });
+    const scrollToSection = (sectionId, label) => {
+        trackEvent("Navigation", "Scroll to Section", label);
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
         } else {
-            navigate('/#contact-us');
+            navigate('/');
             setTimeout(() => {
-                const requestDemoSection = document.getElementById('page8');
-                if (requestDemoSection) {
-                    requestDemoSection.scrollIntoView({ behavior: 'smooth' });
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
                 }
             }, 500);
         }
@@ -62,6 +42,7 @@ const UsefulLinks = () => {
                         stroke="bold"
                         colors="primary:#121331,secondary:#7dac3e"
                         style={{ width: '50px', height: '50px' }}
+                        aria-label="Location icon"
                     ></lord-icon>
                     <div className="text">
                         <h4 id="find-us" className="contact-heading">Find Us</h4>
@@ -75,6 +56,7 @@ const UsefulLinks = () => {
                         stroke="bold"
                         colors="primary:#133453,secondary:#7dac3e"
                         style={{ width: '50px', height: '50px' }}
+                        aria-label="Email icon"
                     ></lord-icon>
                     <div className="text">
                         <h4 id="mail-us" className="contact-heading">Mail Us</h4>
@@ -93,23 +75,43 @@ const UsefulLinks = () => {
                     <nav aria-label="Useful links navigation">
                         <ul className="links-list">
                             <li>
-                                <a onClick={scrollToHome} className="list-item" aria-label="Go to Home section">
+                                <a
+                                    onClick={() => scrollToSection('page1', 'Home')}
+                                    className="list-item"
+                                    aria-label="Go to Home section"
+                                >
                                     Home
                                 </a>
                             </li>
                             <li>
-                                <a onClick={scrollToServices} className="list-item" aria-label="Go to Services section">
+                                <a
+                                    onClick={() => scrollToSection('page2', 'Services')}
+                                    className="list-item"
+                                    aria-label="Go to Services section"
+                                >
                                     Services
                                 </a>
                             </li>
                             <li>
-                                <a onClick={scrollToContactUs} className="list-item" aria-label="Go to Contact Us section">
+                                <a
+                                    onClick={() => scrollToSection('page8', 'Contact Us')}
+                                    className="list-item"
+                                    aria-label="Go to Contact Us section"
+                                >
                                     Contact Us
                                 </a>
                             </li>
                             <li>
-                                <a className="list-item" aria-label="Go to Privacy Policy">
-                                    <Link to="/privacy-policy" aria-label="Navigate to Privacy Policy page">Privacy Policy</Link>
+                                <a
+                                    className="list-item"
+                                    aria-label="Go to Privacy Policy"
+                                >
+                                    <Link
+                                        to="/privacy-policy"
+                                        aria-label="Navigate to Privacy Policy page"
+                                    >
+                                        Privacy Policy
+                                    </Link>
                                 </a>
                             </li>
                         </ul>
@@ -118,6 +120,6 @@ const UsefulLinks = () => {
             </div>
         </div>
     );
-}
+};
 
 export default UsefulLinks;

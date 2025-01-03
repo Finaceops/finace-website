@@ -1,9 +1,18 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import ReactGA from 'react-ga4';
 import './DemoButton.scss';
 
 const DemoButton = () => {
   const navigate = useNavigate();
+
+  const trackBookDemo = () => {
+    ReactGA.event({
+      category: 'Button',
+      action: 'Book a Demo Click',
+      label: 'Demo Button',
+    });
+  };
 
   const scrollToRequestDemo = () => {
     const requestDemoSection = document.getElementById('page8');
@@ -22,8 +31,11 @@ const DemoButton = () => {
 
   return (
     <button
-      className='demo-button'
-      onClick={scrollToRequestDemo}
+      className="demo-button"
+      onClick={() => {
+        trackBookDemo();
+        scrollToRequestDemo();
+      }}
       aria-label="Click to book a demo"
     >
       Book a Demo

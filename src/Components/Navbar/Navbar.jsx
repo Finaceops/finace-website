@@ -1,9 +1,18 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ReactGA from 'react-ga4';
 import './Navbar.scss';
 
 const Navbar = () => {
   const [isNavActive, setIsNavActive] = useState(false);
+
+  const trackNavItemClick = (itemName) => {
+    ReactGA.event({
+      category: 'Navigation',
+      action: `${itemName} Click`,
+      label: `Navbar ${itemName}`,
+    });
+  };
 
   const toggleNavbar = () => {
     setIsNavActive(!isNavActive);
@@ -23,6 +32,7 @@ const Navbar = () => {
   };
 
   const scrollToGetStarted = () => {
+    trackNavItemClick('Services');
     if (window.location.hash !== '#/') {
       window.location.hash = '#/';
       setTimeout(() => {
@@ -34,6 +44,7 @@ const Navbar = () => {
   };
 
   const scrollToRequestDemo = () => {
+    trackNavItemClick('Book a Demo');
     if (window.location.hash !== '#/contact-us' && window.location.hash !== '#/') {
       window.location.hash = '#/contact-us';
       setTimeout(() => {
@@ -45,6 +56,7 @@ const Navbar = () => {
   };
 
   const scrollToAboutUs = () => {
+    trackNavItemClick('About Us');
     if (window.location.hash !== '#/') {
       window.location.hash = '#/';
       setTimeout(() => {
@@ -72,11 +84,39 @@ const Navbar = () => {
       </a>
 
       <nav className={`navbar ${isNavActive ? 'active' : ''}`}>
-        <a href="#/" aria-label="Navigate to home page">Home</a>
-        <a onClick={scrollToGetStarted} aria-label="Learn more about services offered by Finace">Services</a>
-        <Link to="/faq" aria-label="Navigate to Frequently Asked Questions page">FAQs</Link>
-        <a onClick={scrollToAboutUs} aria-label="Learn more about Finace">About Us</a>
-        <a id="new-demo-button" onClick={scrollToRequestDemo} aria-label="Book a demo with Finace">Book a Demo</a>
+        <a
+          href="#/"
+          aria-label="Navigate to home page"
+          onClick={() => trackNavItemClick('Home')}
+        >
+          Home
+        </a>
+        <a
+          onClick={scrollToGetStarted}
+          aria-label="Learn more about services offered by Finace"
+        >
+          Services
+        </a>
+        <Link
+          to="/faq"
+          aria-label="Navigate to Frequently Asked Questions page"
+          onClick={() => trackNavItemClick('FAQs')}
+        >
+          FAQs
+        </Link>
+        <a
+          onClick={scrollToAboutUs}
+          aria-label="Learn more about Finace"
+        >
+          About Us
+        </a>
+        <a
+          id="new-demo-button"
+          onClick={scrollToRequestDemo}
+          aria-label="Book a demo with Finace"
+        >
+          Book a Demo
+        </a>
       </nav>
     </header>
   );

@@ -1,27 +1,31 @@
 import React from 'react';
+import ReactGA from 'react-ga4';
 import './Demo.scss';
 
 const Demo = () => {
+  const trackBookDemo = () => {
+    ReactGA.event({
+      category: 'Button',
+      action: 'Book a Demo Click',
+      label: 'Demo Section',
+    });
+  };
+
   const scrollToRequestDemo = () => {
     const requestDemoSection = document.getElementById('page8');
     if (requestDemoSection) {
-      const headerOffset = document.querySelector('.header').offsetHeight;
+      const headerOffset = document.querySelector('.header')?.offsetHeight || 0;
       const offsetPosition = requestDemoSection.offsetTop - headerOffset;
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
     }
   };
 
   return (
     <div className="demo-section">
-      {/* <div className="demo-txt">
-        <h2>Request Demo</h2>
-        <h2>Request Demo</h2>
-      </div> */}
-
       <div className="content">
         <div className="demo-left">
           <h2 className="demo-h2">Are you ready to experience the power of Finace?</h2>
@@ -32,7 +36,10 @@ const Demo = () => {
         <div className="demo-right">
           <button
             className="demo-btn"
-            onClick={scrollToRequestDemo}
+            onClick={() => {
+              trackBookDemo();
+              scrollToRequestDemo();
+            }}
             aria-label="Click to book a demo"
           >
             Book a Demo

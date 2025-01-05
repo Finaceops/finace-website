@@ -192,7 +192,16 @@ const PrivacyPolicy = () => {
             Address: 305 B Block, Parasmani Regency, 2nd Block Jayanagar, Bangalore, India, 560011
           </p>
           <div className="back-to-top">
-            <a href="#top" aria-label="Back to top">Back to top ↑</a>
+            <a
+              href="#"
+              aria-label="Back to top"
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+            >
+              Back to top ↑
+            </a>
           </div>
         </div>
       </div>

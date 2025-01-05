@@ -50,7 +50,7 @@ const Navbar = () => {
       setTimeout(() => {
         scrollToSection('page8');
       }, 500);
-    } else {
+    } else if (window.location.hash !== '#/contact-us') {
       scrollToSection('page8');
     }
   };
@@ -87,7 +87,12 @@ const Navbar = () => {
         <a
           href="#/"
           aria-label="Navigate to home page"
-          onClick={() => trackNavItemClick('Home')}
+          onClick={() => {
+            trackNavItemClick('Home');
+            if (window.location.hash === '#/' || window.location.hash === '') {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          }}
         >
           Home
         </a>

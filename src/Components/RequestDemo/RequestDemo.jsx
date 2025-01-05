@@ -23,6 +23,13 @@ const RequestDemo = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Google Analytics Event Tracking
+    ReactGA.event({
+      category: "Demo Request",
+      action: "Form Submitted",
+      label: "Request a Demo Form",
+    });
+
     const response = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: {
@@ -45,13 +52,6 @@ const RequestDemo = () => {
         email: '',
         phone: '',
         message: '',
-      });
-
-      // Google Analytics Event Tracking
-      ReactGA.event({
-        category: "Demo Request",
-        action: "Form Submitted",
-        label: "Request a Demo Form",
       });
     } else {
       setSuccessMessage('Failed to submit form.');

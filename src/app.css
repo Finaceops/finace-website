@@ -65,15 +65,3 @@ body {
     width: 100vw;
     /* background-color: lightblue; */
 }
-/* -------------------------------------------------------------- */
-/* #page1, #page2, #page3, #page4, #page5, #page6, #page7, #page8, #page9, #page10 {
-    width: 100vw;
-    height: auto;
-}
-
-Apply 100vh height for larger screens
-@media (min-width: 768px) {
-    #page1, #page6, #page7 {
-        height: 100vh;
-    }
-} */

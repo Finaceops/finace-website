@@ -1,7 +1,7 @@
 import ReactGA from "react-ga4";
 
 export const initializeAnalytics = () => {
-  ReactGA.initialize("G-LYDSJ33T2D"); // Replace with your Measurement ID
+  ReactGA.initialize("G-LYDSJ33T2D");
 };
 
 export const logPageView = (path) => {

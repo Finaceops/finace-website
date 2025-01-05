@@ -45,26 +45,23 @@ const Navbar = () => {
 
   const scrollToRequestDemo = () => {
     trackNavItemClick('Book a Demo');
-    if (window.location.hash !== '#/contact-us' && window.location.hash !== '#/') {
+    if (window.location.hash == '#/faq') {
       window.location.hash = '#/contact-us';
       setTimeout(() => {
         scrollToSection('page8');
       }, 500);
     } else if (window.location.hash !== '#/contact-us') {
       scrollToSection('page8');
+    } else if (window.location.hash == '#/privacy-policy') {
+      scrollToSection('page8');
     }
   };
 
   const scrollToAboutUs = () => {
     trackNavItemClick('About Us');
-    if (window.location.hash !== '#/') {
-      window.location.hash = '#/';
       setTimeout(() => {
         scrollToSection('page9-about');
-      }, 500);
-    } else {
-      scrollToSection('page9-about');
-    }
+      });
   };
 
   return (

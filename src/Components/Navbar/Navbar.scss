@@ -183,10 +183,10 @@ $grid-breakpoints: (
   
   @keyframes shimmer {
     0% {
-      background-position: 300% 0%; /* Move it slower from 100% to 200% */
+      background-position: 300% 0%;
     }
     100% {
-      background-position: -300% 0%; /* Move it slower from 100% to -200% */
+      background-position: -300% 0%;
     }
   }
   

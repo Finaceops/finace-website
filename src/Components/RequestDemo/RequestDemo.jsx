@@ -144,7 +144,7 @@ const RequestDemo = () => {
         </div>
 
         <div className="form-group">
-          <button type="submit" className="submit-btn">Submit</button>
+          <button type="submit" className="submit-btn shimmer">Submit</button>
         </div>
       </form>
 

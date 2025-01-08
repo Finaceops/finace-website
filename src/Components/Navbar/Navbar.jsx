@@ -113,7 +113,7 @@ const Navbar = () => {
           About Us
         </a>
         <a
-          id="new-demo-button"
+          id="new-demo-button" className='shimmer'
           onClick={scrollToRequestDemo}
           aria-label="Book a demo with Finace"
         >

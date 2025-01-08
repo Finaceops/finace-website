@@ -136,28 +136,60 @@ $grid-breakpoints: (
     }
   }
 
+  .navbar a::selection {
+    background-color: $green;
+    color: white;
+  }
+
   .navbar a:hover {
     cursor: pointer;
   }
 
   #new-demo-button {
-    background: $green;
+    background: #75a834;
     color: white;
     padding: 10px 15px;
     border-radius: 25px;
     margin-left: 25px;
     font-weight: 500;
     text-decoration: none;
+    display: inline-block;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
 
     &::before {
       content: none;
     }
   }
-
+  
   #new-demo-button:hover {
     cursor: pointer;
     text-decoration: none;
   }
+  
+  /* Add shimmer effect */
+  #new-demo-button.shimmer {
+    animation: shimmer 9s linear infinite;
+    background-image: linear-gradient(-70deg, 
+      rgba(255, 255, 255, 0) 46%, 
+      rgba(255, 255, 255, 0.8) 50%, 
+      rgba(255, 255, 255, 0.8) 52%, 
+      rgba(255, 255, 255, 0) 56%
+    );
+    background-size: 400% 100%;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: 300% 0%; /* Move it slower from 100% to 200% */
+    }
+    100% {
+      background-position: -300% 0%; /* Move it slower from 100% to -200% */
+    }
+  }
+  
 
   // Responsive
   @media (max-width: map.get($grid-breakpoints, sm)) {

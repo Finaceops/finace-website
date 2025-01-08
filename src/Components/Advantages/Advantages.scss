@@ -21,6 +21,11 @@ $shadow-color: rgba(0, 0, 0, 0.1);
     }
 }
 
+.finance-advantage h1::selection {
+    background-color: #75a834;
+    color: white;
+}
+
 .benefit-container {
     display: flex;
     justify-content: space-between;

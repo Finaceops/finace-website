@@ -73,7 +73,7 @@ const Hero = () => {
                         Get Started
                     </div>
                     <div 
-                        className="book-a-demo shimmer" 
+                        className="book-a-demo" 
                         onClick={() => {
                             trackBookDemo();
                             scrollToRequestDemo();

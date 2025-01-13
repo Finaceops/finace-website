@@ -35,7 +35,7 @@ const Demo = () => {
         </div>
         <div className="demo-right">
           <button
-            className="demo-btn shimmer"
+            className="demo-btn"
             onClick={() => {
               trackBookDemo();
               scrollToRequestDemo();

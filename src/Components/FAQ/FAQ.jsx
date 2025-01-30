@@ -143,6 +143,7 @@ const FAQ = () => {
           </aside>
         )}
 
+        {/* EMPLOYER - ABOUT FINACE */}
         <main className="faq-content">
           {activeTab === 'employer' && (
             <section id="employerFaq">
@@ -186,6 +187,7 @@ const FAQ = () => {
                     entire workforce.
                   </p>
                 </div>
+
                 <div
                   className={`faq-item ${openFaq === 2 ? 'open' : ''}`}
                   onClick={() => toggleFaq(2)}
@@ -204,6 +206,7 @@ const FAQ = () => {
                     regardless of their credit history or financial background.
                   </p>
                 </div>
+
                 <div
                   className={`faq-item ${openFaq === 3 ? 'open' : ''}`}
                   onClick={() => toggleFaq(3)}
@@ -219,6 +222,7 @@ const FAQ = () => {
                     educational resources to encourage better financial practices. You no longer have to deal
                     with predatory loans, complicated KYC procedures, and loan rejections.</p>
                 </div>
+
                 <div
                   className={`faq-item ${openFaq === 4 ? 'open' : ''}`}
                   onClick={() => toggleFaq(4)}
@@ -234,6 +238,7 @@ const FAQ = () => {
                     using your registered email or phone number on the Finace app.
                   </p>
                 </div>
+
                 <div
                   className={`faq-item ${openFaq === 5 ? 'open' : ''}`}
                   onClick={() => toggleFaq(5)}
@@ -251,6 +256,7 @@ const FAQ = () => {
                     Account Manager who will provide support and guidance every step of the way.
                   </p>
                 </div>
+
                 <div
                   className={`faq-item ${openFaq === 6 ? 'open' : ''}`}
                   onClick={() => toggleFaq(6)}
@@ -265,6 +271,7 @@ const FAQ = () => {
                   <p>The process typically takes between 1 to 4 weeks for a company to start offering Finace's
                     services to its employees.</p>
                 </div>
+
                 <div
                   className={`faq-item ${openFaq === 7 ? 'open' : ''}`}
                   onClick={() => toggleFaq(7)}
@@ -392,6 +399,7 @@ const FAQ = () => {
                     finace.ops@gmail.com</p>
                 </div>
 
+                {/* EMPLOYER - ABOUT EWA */}
                 <h2 id="EWA-employer">About Earned Wage Access</h2>
                 <div
                   className={`faq-item ${openFaq === 15 ? 'open' : ''}`}
@@ -508,6 +516,7 @@ const FAQ = () => {
             </section>
           )}
 
+          {/* EMPLOYEE - ABOUT FINACE */}
           {activeTab === 'employee' && (
             <section id="employeeFaq">
               <div className="faq-section">
@@ -642,6 +651,7 @@ const FAQ = () => {
                   <p>You can reach Finace's customer support via email. Email: finace.ops@gmail.com</p>
                 </div>
 
+                {/* EMPLOYEE - ABOUT EWA */}
                 <h2 id='EWA-employee'>About Earned Wage Access</h2>
                 <div
                   className={`faq-item ${openFaq === 30 ? 'open' : ''}`}
@@ -740,7 +750,16 @@ const FAQ = () => {
             </section>
           )}
           <div className="back-to-top">
-            <a href="#top">Back to top ↑</a>
+            <a
+              href="#"
+              aria-label="Back to top"
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+            >
+              Back to top ↑
+            </a>
           </div>
           {/* <div className="support-box-last">
               <strong>Still need support?</strong>

@@ -15,6 +15,7 @@ import PrivacyPolicy from './Components/PrivacyPolicy/PrivacyPolicy';
 import FAQ from './Components/FAQ/FAQ';
 import ScrollToTop from './Components/ScrollToTop';
 import DemoPage from './Components/DemoPage/DemoPage';
+import SecurityPrivacy from './Components/SecurityPrivacy/SecurityPrivacy';
 
 const PageTracker = () => {
   const location = useLocation();
@@ -55,6 +56,9 @@ const App = () => {
               </div>
               <div id="page5">
                 <Steps />
+              </div>
+              <div id="page6">
+                <SecurityPrivacy />
               </div>
               <div id="page8">
                 <RequestDemo />

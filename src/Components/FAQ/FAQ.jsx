@@ -95,8 +95,8 @@ const FAQ = () => {
             <div className="color-this-employer">
               <h3>Employer Support Contents</h3>
               <ul>
-                <li><a href="#about-employer" onClick={() => scrollToSection('about-employer')} aria-label="Learn about Finace for Employers">About Finace</a></li>
-                <li><a href="#EWA-employer" onClick={() => scrollToSection('EWA-employer')} aria-label="Learn about Earned Wage Access for Employers">About Earned Wage Access</a></li>
+                <li><a onClick={() => scrollToSection('about-employer')} aria-label="Learn about Finace for Employers">About Finace</a></li>
+                <li><a onClick={() => scrollToSection('EWA-employer')} aria-label="Learn about Earned Wage Access for Employers">About Earned Wage Access</a></li>
               </ul></div>
             <div className="support-box">
               <strong>Still need support?</strong>
@@ -131,8 +131,8 @@ const FAQ = () => {
             <div className="color-this-employee">
               <h3>Employee Support Contents</h3>
               <ul>
-                <li><a href="#about-employee" onClick={() => scrollToSection('about-employee')} aria-label="Learn about Finace for Employees">About Finace</a></li>
-                <li><a href="#EWA-employee" onClick={() => scrollToSection('EWA-employee')} aria-label="Learn about Earned Wage Access for Employees">About Earned Wage Access</a></li>
+                <li><a onClick={() => scrollToSection('about-employee')} aria-label="Learn about Finace for Employees">About Finace</a></li>
+                <li><a onClick={() => scrollToSection('EWA-employee')} aria-label="Learn about Earned Wage Access for Employees">About Earned Wage Access</a></li>
               </ul>
             </div>
             <div className="support-box">

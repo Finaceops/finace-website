@@ -71,7 +71,7 @@ const SecurityPrivacy = () => {
                 transition={{ duration: 0.8, delay: 0.8 }}
                 viewport={{ once: true }}
             >
-                <img src="/backed.svg" alt="ICICI Bank" />
+                <img src="/PoweredBy.svg" alt="ICICI Bank" />
             </motion.div>
         </div>
     );
